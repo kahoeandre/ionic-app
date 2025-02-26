@@ -1,0 +1,23 @@
+ion-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;    
+   }
+
+ion-toolbar{
+    --background: var(--color-backgroud-init);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    --color: #fff;
+}
+
+ion-buttons{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    --color: #fff;
+}
+ion-icon{
+    --color: #fff;
+}

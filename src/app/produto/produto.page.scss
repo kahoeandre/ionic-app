@@ -1,0 +1,60 @@
+.edit-header-toolbar{
+    --background:var(--color-backgroud-init) ;
+    --color: var(--color-backgroud-second);
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+.back-icon{
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.img-edit{
+ width: 100%;
+ height: 40%;
+ display: flex;
+}
+
+.imagem-produto {
+    width: 100%;
+    height: 100%; 
+    object-fit: contain;  
+  }
+
+  ion-item .item-align {
+    --padding-start: 0; 
+    --inner-padding-end: 0;
+    overflow: initial;
+  }
+  
+  .preco-produto {
+    font-size: 1rem;
+    font-weight: bold; 
+    color:var(--color-gray-light); 
+  }
+  
+  .nome-produto {
+    font-size: 1.3rem;
+    font-weight: bold; 
+    margin-bottom: 0.6rem;
+  }
+  
+  .categoria-produto {
+    font-size: 1rem;
+    color: var( --color-gray-light); 
+    margin-bottom: 0.6rem;
+  }
+  
+  .descricao-produto {
+    font-size: 0.9rem;
+    color: var(--color-gray-dark);
+  }
+  
+  .botoes-container {
+    width: 80%;
+  }
+

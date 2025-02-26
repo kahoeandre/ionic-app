@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar class="edit-header-toolbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="voltar()">
+        <ion-icon class="back-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="produto" class="ion-padding">
+  <div class="img-edit">
+    <ion-img [src]="produto.image" class="imagem-produto" alt="Imagem do Produto"></ion-img>
+  </div>
+  <ion-list lines="none">
+    <ion-item>
+      <ion-label>
+        <ion-item class="item-align">
+          <div slot="start">
+            <h1 class="nome-produto">{{ produto.title }}</h1>
+          </div>
+          <div slot="end">
+            <p class="preco-produto">{{ produto.price | currency}}</p>
+          </div>
+        </ion-item>
+        <p class="categoria-produto">{{ produto.category }}</p>
+        <p class="descricao-produto">{{ produto.description }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid class="botoes-container">
+    <ion-row>
+      <ion-col>
+        <ion-button size="small" expand="block" color="primary" (click)="editarItem()">
+          <ion-icon name="pencil" slot="start"></ion-icon>
+          Editar
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button size="small" expand="block" color="danger" (click)="removerItem(produto.id)">
+          <ion-icon name="trash" slot="start"></ion-icon>
+          Excluir
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
