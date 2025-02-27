@@ -8,6 +8,7 @@ import { PopoverController } from '@ionic/angular';
   selector: 'app-filtros',
   templateUrl: './filtros.component.html',
   styleUrls: ['./filtros.component.scss'],
+  standalone: true,
   imports: [IonicModule,CommonModule],
 })
 export class FiltrosComponent  implements OnInit {
