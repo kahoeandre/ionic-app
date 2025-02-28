@@ -1,0 +1,53 @@
+
+ion-content{
+  --background-color:var(--color-backgroud-init) ;
+}
+
+swiper-container {
+  width: 90%;
+  height: 8rem; 
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow:none;
+}
+
+
+swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilo para a (bolinhas) */
+swiper-container::part(pagination) {
+  bottom: 10px;
+}
+
+swiper-container::part(bullet) {
+  background-color: #fff;
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+}
+
+swiper-container::part(bullet-active) {
+  background-color: #007bff;
+  opacity: 1;
+}
+
+@media (min-width: 992px) {
+  swiper-container {
+    width: 55%;
+    height: 9rem; 
+   
+  }
+  
+}

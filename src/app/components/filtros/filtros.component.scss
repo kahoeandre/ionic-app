@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     flex-direction: row;
+    justify-content: center;
   }
   
   ion-modal {
@@ -23,4 +24,9 @@
 
   .btn-filtros{
     width: 7rem;
+    margin: 1rem;
+    --background:var(--color-backgroud-init);
+  --background-hover:var(--color-backgroud-init);
+  --background-activated: var(--color-backgroud-init);
+  --background-focused: var(--color-backgroud-init);
   }

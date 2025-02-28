@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../../services/produto.services';
-import { IonicModule } from '@ionic/angular';
+import { IonContent,IonList,IonItem,IonAvatar,IonLabel } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
-import { RouterLink, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { RouterLink, Router } from '@angular/router';
   templateUrl: './lista.component.html',
   styleUrls: ['./lista.component.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, RouterLink,],
+  imports: [IonContent,IonList,IonItem,IonAvatar,IonLabel, CommonModule,],
 })
 export class ListaComponent  implements OnInit{
 

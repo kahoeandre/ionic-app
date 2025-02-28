@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonHeader,IonToolbar,IonButtons,IonButton,IonIcon,IonTitle,IonContent,IonCard,IonList,IonItem,IonLabel,IonInput,IonSelect,IonSelectOption,IonGrid,IonRow,IonCol} from '@ionic/angular/standalone';
 import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { ProdutoService } from '../services/produto.services';
@@ -13,7 +13,7 @@ import { lastValueFrom } from 'rxjs';
   templateUrl: './cadastro.page.html',
   styleUrls: ['./cadastro.page.scss'],
   standalone: true,
-  imports: [IonicModule, FormsModule, CommonModule],
+  imports: [ IonHeader,IonToolbar,IonButtons,IonButton,IonIcon,IonTitle,IonContent,IonCard,IonList,IonItem,IonLabel,IonInput,IonSelect,IonSelectOption,IonGrid,IonRow,IonCol, FormsModule, CommonModule],
 })
 export class CadastroPage {
 

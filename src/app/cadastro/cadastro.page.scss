@@ -119,3 +119,17 @@ ion-content {
     margin-top: 10px;
     border: 1px solid #ddd;
   }
+
+
+  @media (min-width: 992px) {
+   .overlay{
+    width: 50%;
+    margin: auto;
+    position:relative ;
+   }
+   .form-regist{
+    width:80%;
+    margin: auto;
+    margin-top: 2rem;
+   }
+  }

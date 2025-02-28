@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { IonButton,IonIcon,IonModal,IonPopover,IonContent,IonList,IonItem} from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { ProdutoService } from '../../services/produto.services';
-import { PopoverController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-filtros',
   templateUrl: './filtros.component.html',
   styleUrls: ['./filtros.component.scss'],
   standalone: true,
-  imports: [IonicModule,CommonModule],
+  imports: [IonButton,IonIcon,IonModal,IonPopover,IonContent,IonList,IonItem,CommonModule],
 })
 export class FiltrosComponent  implements OnInit {
 public produtosFiltrados: any[] = [];
 
   constructor(
     private produtoService: ProdutoService,
-    private popoverCtrl: PopoverController
+    
   ) { }
 
   ngOnInit(

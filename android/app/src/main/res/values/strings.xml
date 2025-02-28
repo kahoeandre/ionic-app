@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">catalago-de-produtos</string>
+    <string name="title_activity_main">catalago-de-produtos</string>
+    <string name="package_name">catalago.de.produtos</string>
+    <string name="custom_url_scheme">catalago.de.produtos</string>
+</resources>

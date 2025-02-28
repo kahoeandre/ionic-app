@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonHeader,IonToolbar,IonButtons,IonButton,IonIcon,IonContent,IonImg,IonList,IonItem,IonLabel,IonGrid,IonRow,IonCol } from '@ionic/angular/standalone';
 import { NavController } from '@ionic/angular'
 import { ProdutoService } from '../services/produto.services';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './produto.page.html',
   styleUrls: ['./produto.page.scss'],
   standalone: true,
-  imports: [FormsModule, IonicModule, CommonModule]
+  imports: [FormsModule, IonHeader,IonToolbar,IonButtons,IonButton,IonIcon,IonContent,IonImg,IonList,IonItem,IonLabel,IonGrid,IonRow,IonCol, CommonModule]
 })
 export class ProdutoPage implements OnInit {
   produto: any;

@@ -20,7 +20,10 @@ addIcons({
   'pencil': pencilOutline,
 });
 
+document.body.classList.remove('dark');
+
 bootstrapApplication(AppComponent, {
+  
   providers: [
     provideHttpClient(),
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
@@ -33,4 +36,5 @@ bootstrapApplication(AppComponent, {
             registrationStrategy: 'registerWhenStable:30000'
           }),
   ],
+  
 });
