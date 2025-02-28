@@ -116,6 +116,7 @@ export class CadastroPage {
         const response = await lastValueFrom(this.produtoService.cadastrarProduto(produto));
         console.log('Produto cadastrado:', response);
         this.produtoService.produtos.push(response);
+        this.produtoService.produtosOriginal.push(response);
       }
       const alert = await this.alertController.create({
         header: 'Sucesso!',

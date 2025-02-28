@@ -43,7 +43,17 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --ion-background-color: #ffffff !important;
-      --ion-text-color: #000000 !important;
+      --ion-color-primary: #3880ff; /* Cor primária no modo claro */
+    --ion-color-primary-rgb: 56, 128, 255;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #3171e0;
+    --ion-color-primary-tint: #4c8dff;
     }
+
+    body {
+      background-color: #ffffff; /* Fundo branco */
+      color: #000000; /* Texto preto */
+    }
+
   }

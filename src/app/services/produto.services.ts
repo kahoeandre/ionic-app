@@ -39,10 +39,8 @@ export class ProdutoService {
   // Pesquisar produtos por categoria
   filtrarPorCategoria(categoria: string) {
     if (categoria === 'all') {
-      // Restaura a lista original
       this.produtos = [...this.produtosOriginal];
     } else {
-      // Filtra os produtos pela categoria selecionada
       this.produtos = this.produtosOriginal.filter(
         (produto) => produto.category === categoria
       );
