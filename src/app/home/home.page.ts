@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { IonSearchbar,IonHeader,IonToolbar,IonContent,IonFooter } from '@ionic/angular/standalone';
+import { IonSearchbar, IonHeader, IonToolbar, IonContent, IonFooter } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { ListaComponent } from '../components/lista/lista.component';
@@ -12,10 +12,11 @@ import { FormsModule } from '@angular/forms';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [ FormsModule,CarrosselComponent,IonSearchbar,IonHeader,IonToolbar,IonContent,IonFooter,CommonModule, NavbarComponent,ListaComponent, FiltrosComponent,IonSearchbar],
+  imports: [FormsModule, CarrosselComponent, IonSearchbar, IonHeader, IonToolbar, IonContent, IonFooter, CommonModule, NavbarComponent, ListaComponent, FiltrosComponent, IonSearchbar],
 })
 export class HomePage {
   headerHidden = false;
+  searchTerm: string = '';
 
   termoPesquisa: string = '';
 
@@ -24,5 +25,10 @@ export class HomePage {
     console.log(this.termoPesquisa)
   }
 
-  constructor() {}
+  atualizarBusca(event: any) {
+    this.searchTerm = event.target.value;
+    console.log('teste', this.searchTerm)
+  }
+
+  constructor() { }
 }

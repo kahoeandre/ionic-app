@@ -1,10 +1,41 @@
+home 
+<ion-content [fullscreen]="true">
+  <ion-header class="ion-no-border" [class.hidden]="headerHidden">
+    <ion-toolbar class="edit-header-toolbar">
+      <div class="toolbar-background"></div>
+      <div class="toolbar-content">
+        <ion-searchbar 
+          show-clear-button="never" 
+          class="custom-search" 
+          placeholder="Buscar produtos..."
+          (ionInput)="atualizarBusca($event)">
+        </ion-searchbar>
+
+
+        <app-filtros></app-filtros>
+      </div>
+      <app-carrossel></app-carrossel>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-lista [searchTerm]="searchTerm"></app-lista>
+</ion-content>
+
+<ion-footer>
+  <app-navbar></app-navbar>
+</ion-footer>
+ts ....
+  searchTerm: string = '';
+
+  atualizarBusca(event: any) {
+    this.searchTerm = event.target.value;
+  }
+~~
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../../services/produto.services';
 import { IonList, IonItem, IonAvatar, IonLabel } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { Input } from '@angular/core';
-
 
 
 @Component({
@@ -21,7 +52,7 @@ export class ListaComponent implements OnInit {
 
   constructor(
     public produtoService: ProdutoService,
-    private router: Router,
+    private router: Router
   ) { }
 
   async ngOnInit() {
@@ -48,15 +79,15 @@ export class ListaComponent implements OnInit {
 
   filtrarProdutos() {
     if (this.searchTerm && this.searchTerm.trim() !== '') {
-      this.produtoService.produtos = this.produtoService.produtosOriginal.filter((produto) =>
-        produto.title.toLowerCase().includes(this.searchTerm.toLowerCase()),
+      this.produtosFiltrados = this.produtos.filter((produto) =>
+        produto.title.toLowerCase().includes(this.searchTerm.toLowerCase())
       );
     } else {
-      this.produtoService.produtos = [...this.produtoService.produtosOriginal];
+      this.produtosFiltrados = [...this.produtos];
     }
-    console.log('teste', this.produtoService.produtos)
   }
 
+  // função para listar todos os produtos
   async carregarProdutos() {
     try {
       this.produtos = await this.produtoService.listarProdutos().toPromise();
@@ -66,6 +97,7 @@ export class ListaComponent implements OnInit {
     }
   }
 
+  // navega para a pagina de detalhes do produto com o id
   abrirDetalhesProdutos(id: number) {
     this.router.navigate(['/produto', id])
   }

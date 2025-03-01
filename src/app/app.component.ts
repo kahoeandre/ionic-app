@@ -16,7 +16,7 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      document.body.classList.remove('dark'); // Remove a classe "dark" se estiver ativa
+      document.body.classList.remove('dark'); 
     });
   }
 }

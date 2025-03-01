@@ -1,16 +1,17 @@
-
 <ion-content [fullscreen]="true">
   <ion-header class="ion-no-border" [class.hidden]="headerHidden">
     <ion-toolbar class="edit-header-toolbar">
       <div class="toolbar-background"></div>
       <div class="toolbar-content">
-        <ion-searchbar show-clear-button="never" class="custom-search" placeholder="Buscar produtos..."></ion-searchbar>
+        <ion-searchbar show-clear-button="never" class="custom-search" placeholder="Buscar produtos..."
+          (ionInput)="atualizarBusca($event)">
+        </ion-searchbar>
         <app-filtros></app-filtros>
       </div>
       <app-carrossel></app-carrossel>
     </ion-toolbar>
   </ion-header>
-  <app-lista></app-lista>
+  <app-lista [searchTerm]="searchTerm"></app-lista>
 </ion-content>
 
 <ion-footer>

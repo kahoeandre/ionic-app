@@ -1,17 +1,15 @@
-
-ion-content{
-  --background-color:var(--color-backgroud-init) ;
+ion-content {
+  --background-color: var(--color-backgroud-init);
 }
 
 swiper-container {
   width: 90%;
-  height: 8rem; 
+  height: 8rem;
   margin: auto;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow:none;
+  box-shadow: none;
 }
-
 
 swiper-slide {
   display: flex;
@@ -25,7 +23,6 @@ swiper-slide {
   color: #333;
 }
 
-/* Estilo para a (bolinhas) */
 swiper-container::part(pagination) {
   bottom: 10px;
 }
@@ -46,8 +43,7 @@ swiper-container::part(bullet-active) {
 @media (min-width: 992px) {
   swiper-container {
     width: 55%;
-    height: 9rem; 
-   
+    height: 9rem;
   }
-  
+
 }

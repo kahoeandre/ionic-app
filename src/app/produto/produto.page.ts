@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonHeader,IonToolbar,IonButtons,IonButton,IonIcon,IonContent,IonImg,IonList,IonItem,IonLabel,IonGrid,IonRow,IonCol } from '@ionic/angular/standalone';
+import { IonFooter, IonHeader, IonToolbar, IonButtons, IonButton, IonIcon, IonContent, IonImg, IonList, IonItem, IonLabel, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
 import { NavController } from '@ionic/angular'
 import { ProdutoService } from '../services/produto.services';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './produto.page.html',
   styleUrls: ['./produto.page.scss'],
   standalone: true,
-  imports: [FormsModule, IonHeader,IonToolbar,IonButtons,IonButton,IonIcon,IonContent,IonImg,IonList,IonItem,IonLabel,IonGrid,IonRow,IonCol, CommonModule]
+  imports: [IonFooter, FormsModule, IonHeader, IonToolbar, IonButtons, IonButton, IonIcon, IonContent, IonImg, IonList, IonItem, IonLabel, IonGrid, IonRow, IonCol, CommonModule]
 })
 export class ProdutoPage implements OnInit {
   produto: any;
@@ -26,12 +26,9 @@ export class ProdutoPage implements OnInit {
     private router: Router
   ) { }
 
-  //função para teronar a pagina
   voltar() {
     this.navController.back();
   }
-
-  
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id')!;
@@ -43,28 +40,28 @@ export class ProdutoPage implements OnInit {
   }
 
   carregarProduto(id: number) {
-   const produtoEncontrado = this.produtoService.produtos.find(p => p.id === id);
-   if(produtoEncontrado){
-    this.produto = produtoEncontrado;
-   } else {
-    console.error('gerou erro no teste')
-   }
+    const produtoEncontrado = this.produtoService.produtos.find(p => p.id === id);
+    if (produtoEncontrado) {
+      this.produto = produtoEncontrado;
+    } else {
+      console.error('gerou erro no teste')
+    }
   }
 
-  removerItem(id:number) {
-   const index = this.produtoService.produtos.findIndex(p => p.id === id);
-      if (index !== -1){
-        this.produtoService.produtos.splice(index, 1);
-        console.log('Produto removido')
-        this.voltar()
-      } else {
-        console.error('Erro para apagar')
-      }
+  removerItem(id: number) {
+    const index = this.produtoService.produtos.findIndex(p => p.id === id);
+    if (index !== -1) {
+      this.produtoService.produtos.splice(index, 1);
+      console.log('Produto removido')
+      this.voltar()
+    } else {
+      console.error('Erro para apagar')
+    }
   }
 
   editarItem() {
     const id = this.produto.id;
-    this.router.navigate(['/cadastro',id]);
-    }
+    this.router.navigate(['/cadastro', id]);
   }
+}
 

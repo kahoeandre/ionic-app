@@ -1,49 +1,50 @@
 .edit-header-toolbar {
-  --background: transparent; 
-  position: relative; 
+  --background: transparent;
+  position: relative;
   width: 100%;
   height: 15rem;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  }
+}
 
-  ion-header.hidden {
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-out;
-  }
-  
-  ion-header {
-    transition: transform 0.3s ease-out;
-  }
+ion-header.hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-out;
+}
+
+ion-header {
+  transition: transform 0.3s ease-out;
+}
 
 .toolbar-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 70%; 
+  height: 70%;
   background: var(--color-backgroud-init);
-  z-index: -1; 
+  z-index: -1;
 }
 
 .toolbar-content {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  z-index: 1; 
+  z-index: 1;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 .custom-search {
-  --border-radius:1rem;
+  --border-radius: 1rem;
   --background: #fff;
   max-width: 80%;
 }
 
-.filter-icon{
+.filter-icon {
   font-size: 1.5rem;
   color: #fff;
 }
@@ -55,9 +56,8 @@ ion-content {
 }
 
 @media (min-width: 992px) {
- 
-  .custom-search{
+
+  .custom-search {
     max-width: 50%;
   }
 }
-

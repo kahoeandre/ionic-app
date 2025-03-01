@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonButton,IonIcon,IonModal,IonPopover,IonContent,IonList,IonItem} from '@ionic/angular/standalone';
+import { IonButton, IonIcon, IonModal, IonPopover, IonContent, IonList, IonItem } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { ProdutoService } from '../../services/produto.services';
 
@@ -9,18 +9,18 @@ import { ProdutoService } from '../../services/produto.services';
   templateUrl: './filtros.component.html',
   styleUrls: ['./filtros.component.scss'],
   standalone: true,
-  imports: [IonButton,IonIcon,IonModal,IonPopover,IonContent,IonList,IonItem,CommonModule],
+  imports: [IonButton, IonIcon, IonModal, IonPopover, IonContent, IonList, IonItem, CommonModule],
 })
-export class FiltrosComponent  implements OnInit {
-public produtosFiltrados: any[] = [];
+
+export class FiltrosComponent implements OnInit {
+  public produtosFiltrados: any[] = [];
 
   constructor(
     private produtoService: ProdutoService,
-    
   ) { }
 
   ngOnInit(
-  ) {}
+  ) { }
 
   async filtrarPorPreco(preco: string) {
     if (preco === 'menor') {
@@ -31,7 +31,7 @@ public produtosFiltrados: any[] = [];
       this.produtoService.produtos.sort(
         (a, b) => b.price - a.price
       );
-    } else if(preco = 'all'){
+    } else if (preco = 'all') {
       this.produtoService.produtos = [...this.produtoService.produtosOriginal];
     }
   }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonHeader,IonToolbar,IonButtons,IonButton,IonIcon,IonTitle,IonContent,IonCard,IonList,IonItem,IonLabel,IonInput,IonSelect,IonSelectOption,IonGrid,IonRow,IonCol} from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonButtons, IonButton, IonIcon, IonTitle, IonContent, IonCard, IonList, IonItem, IonLabel, IonInput, IonSelect, IonSelectOption, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
 import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { ProdutoService } from '../services/produto.services';
@@ -13,11 +13,10 @@ import { lastValueFrom } from 'rxjs';
   templateUrl: './cadastro.page.html',
   styleUrls: ['./cadastro.page.scss'],
   standalone: true,
-  imports: [ IonHeader,IonToolbar,IonButtons,IonButton,IonIcon,IonTitle,IonContent,IonCard,IonList,IonItem,IonLabel,IonInput,IonSelect,IonSelectOption,IonGrid,IonRow,IonCol, FormsModule, CommonModule],
+  imports: [IonHeader, IonToolbar, IonButtons, IonButton, IonIcon, IonTitle, IonContent, IonCard, IonList, IonItem, IonLabel, IonInput, IonSelect, IonSelectOption, IonGrid, IonRow, IonCol, FormsModule, CommonModule],
 })
 export class CadastroPage {
 
-  // Variáveis que armazenam os campos digitados no cadastro do item
   id?: number;
   nome: string = '';
   preco: number | null = null;
@@ -48,7 +47,6 @@ export class CadastroPage {
     }
   }
 
-  // Função para carregar produto para editar
   carregarProdutoParaEdicao(id: number) {
     const produtoEncontrado = this.produtoService.produtos.find(p => p.id === id);
     if (produtoEncontrado) {
@@ -62,12 +60,10 @@ export class CadastroPage {
     }
   }
 
-  // Função para voltar à página anterior
   voltar() {
     this.navController.back();
   }
 
-  // Função para coletar a imagem e exibir no body
   onFileSelected(event: any) {
     const file = event.target.files[0];
 
@@ -77,16 +73,13 @@ export class CadastroPage {
       reader.onload = () => {
         this.image = reader.result as string;
       };
-
       reader.readAsDataURL(file);
     } else {
       alert('Por favor, selecione uma imagem!');
     }
   }
 
-  // função para enviar o cadastro do produto para api
   async salvarProduto() {
-    // Verifica se todos os campos foram preenchidos
     if (!this.nome || !this.preco || !this.selectedCategory || !this.descricao || !this.image) {
       const alert = await this.alertController.create({
         header: 'Atenção',
@@ -97,7 +90,6 @@ export class CadastroPage {
       return;
     }
 
-    // Cria o objeto do produto no formato esperado pela API
     const produto = {
       title: this.nome,
       price: this.preco,
@@ -106,9 +98,7 @@ export class CadastroPage {
       category: this.selectedCategory,
     };
 
-
     try {
-      //verifica se o item é edição ou criação
       if (this.edicao && this.produtoId) {
         await lastValueFrom(this.produtoService.editarItem(this.produtoId, produto));
         console.log('Produto atualizado:', produto);
@@ -137,7 +127,7 @@ export class CadastroPage {
       console.error('Erro ao cadastrar produto:', error);
     }
   }
-  //Função para limpar os campos do cadastro 
+
   limparCampos() {
     this.id = undefined;
     this.nome = '';

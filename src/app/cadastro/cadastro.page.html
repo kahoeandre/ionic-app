@@ -11,45 +11,42 @@
 
 <ion-content [fullscreen]="true">
   <div class="backgrou-fixed"></div>
-    
+
   <ion-card class="overlay">
     <ion-list class="form-regist">
-      <!-- Nome -->
+
       <ion-item class="itens-regist">
         <ion-label position="floating" class="custom-label">Nome</ion-label>
         <ion-input type="text" placeholder="" [(ngModel)]="nome" name="nome" required class="custom-input"></ion-input>
       </ion-item>
-  
-      <!-- Preço -->
+
       <ion-item class="itens-regist">
         <ion-label position="floating" class="custom-label">Preço</ion-label>
-        <ion-input type="number" placeholder="" [(ngModel)]="preco" name="preco" required class="custom-input"></ion-input>
+        <ion-input type="number" placeholder="" [(ngModel)]="preco" name="preco" required
+          class="custom-input"></ion-input>
       </ion-item>
-  
-      <!-- Categoria -->
+
       <ion-item class="itens-regist">
         <ion-label position="floating" class="custom-label">Selecione uma categoria</ion-label>
-        <ion-select  [(ngModel)]="selectedCategory" name="categoria" required class="custom-select">
+        <ion-select [(ngModel)]="selectedCategory" name="categoria" required class="custom-select">
           <ion-select-option value="men's clothing">men's clothing</ion-select-option>
           <ion-select-option value="jewelery">jewelery</ion-select-option>
           <ion-select-option value="electronics">electronics</ion-select-option>
           <ion-select-option value="women's clothing">women's clothing</ion-select-option>
         </ion-select>
       </ion-item>
-  
-      <!-- Descrição -->
+
       <ion-item class="itens-regist">
         <ion-label position="floating" class="custom-label">Descrição</ion-label>
-        <ion-input type="text" placeholder="" [(ngModel)]="descricao" name="descricao" required class="custom-input"></ion-input>
+        <ion-input type="text" placeholder="" [(ngModel)]="descricao" name="descricao" required
+          class="custom-input"></ion-input>
       </ion-item>
-  
-      <!-- Upload de Imagem -->
+
       <ion-item class="itens-regist">
         <ion-label class="custom-label">URL da imagem</ion-label>
         <ion-input type="url" placeholder="" [(ngModel)]="image" name="image" required class="custom-input"></ion-input>
       </ion-item>
-  
-      <!-- Pré-visualização da Imagem -->
+
       <ion-item *ngIf="image" class="itens-regist">
         <img [src]="image" alt="Imagem selecionada" class="custom-image" />
       </ion-item>

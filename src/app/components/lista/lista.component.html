@@ -1,16 +1,16 @@
-
-  <ion-list class="grid-list">
-    <ion-item class="grid-item" *ngFor="let produto of produtoService.produtos" (click)="abrirDetalhesProdutos(produto.id)">
-      <div class="item-align">
-        <div class="color-back">
+<ion-list class="grid-list">
+  <ion-item class="grid-item" *ngFor="let produto of produtoService.produtos"
+    (click)="abrirDetalhesProdutos(produto.id)">
+    <div class="item-align">
+      <div class="color-back">
         <ion-avatar slot="start">
           <img [src]="produto.image" [alt]="produto.title" />
         </ion-avatar>
       </div>
-        <ion-label>
-          <h2>{{ produto.title }}</h2>
-          <p>Valor: {{ produto.price | currency }}</p>
-        </ion-label>
-      </div>
-    </ion-item>
-  </ion-list>
+      <ion-label>
+        <h2>{{ produto.title }}</h2>
+        <p>Valor: {{ produto.price | currency }}</p>
+      </ion-label>
+    </div>
+  </ion-item>
+</ion-list>

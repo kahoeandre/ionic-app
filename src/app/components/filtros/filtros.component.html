@@ -4,7 +4,7 @@
 <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
   <ng-template>
     <div class="block">
-      <ion-button  class="btn-filtros" id="filtro-preco">Preço</ion-button>
+      <ion-button class="btn-filtros" id="filtro-preco">Preço</ion-button>
       <ion-popover trigger="filtro-preco" [dismissOnSelect]="true">
         <ng-template>
           <ion-content>
@@ -22,11 +22,14 @@
         <ng-template>
           <ion-content>
             <ion-list>
-               <ion-item [button]="true" [detail]="false" (click)="filtrarPorCategoria('all')">Todas</ion-item>
-              <ion-item [button]="true" [detail]="false" (click)="filtrarPorCategoria('men\'s clothing')">Men's Clothing</ion-item>
-              <ion-item [button]="true" [detail]="false" (click)="filtrarPorCategoria('women\'s clothing')">Women's Clothing</ion-item>
+              <ion-item [button]="true" [detail]="false" (click)="filtrarPorCategoria('all')">Todas</ion-item>
+              <ion-item [button]="true" [detail]="false" (click)="filtrarPorCategoria('men\'s clothing')">Men's
+                Clothing</ion-item>
+              <ion-item [button]="true" [detail]="false" (click)="filtrarPorCategoria('women\'s clothing')">Women's
+                Clothing</ion-item>
               <ion-item [button]="true" [detail]="false" (click)="filtrarPorCategoria('jewelery')">Jewelery</ion-item>
-              <ion-item [button]="true" [detail]="false" (click)="filtrarPorCategoria('electronics')">Electronics</ion-item>
+              <ion-item [button]="true" [detail]="false"
+                (click)="filtrarPorCategoria('electronics')">Electronics</ion-item>
             </ion-list>
           </ion-content>
         </ng-template>

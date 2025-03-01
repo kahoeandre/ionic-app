@@ -28,21 +28,18 @@
       </ion-label>
     </ion-item>
   </ion-list>
+</ion-content>
 
-  <ion-grid class="botoes-container">
-    <ion-row>
-      <ion-col>
-        <ion-button size="small" expand="block" color="primary" (click)="editarItem()">
-          <ion-icon name="pencil" slot="start"></ion-icon>
-          Editar
-        </ion-button>
+<ion-footer>
+  <ion-grid>
+    <ion-row class="centralizar-lg">
+      <ion-col size="6" size-lg="3" class="text-right">
+        <ion-button expand="block" class="ion-button-editar" (click)="editarItem()">Editar</ion-button>
       </ion-col>
-      <ion-col>
-        <ion-button size="small" expand="block" color="danger" (click)="removerItem(produto.id)">
-          <ion-icon name="trash" slot="start"></ion-icon>
-          Excluir
-        </ion-button>
+
+      <ion-col size="6" size-lg="3" class="text-right">
+        <ion-button expand="block" class="ion-button-remover" (click)="removerItem(produto.id)">Remover</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-content>
+</ion-footer>
