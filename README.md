@@ -4,11 +4,11 @@ Este projeto é um catálogo de produtos desenvolvido com **Ionic**, **Angular**
 
 ## Tecnologias Utilizadas
 
-- **Ionic**: Framework para desenvolvimento de aplicativos móveis híbridos.
-- **Angular**: Framework para construção da interface do usuário.
-- **Capacitor**: Ferramenta para construir aplicativos nativos.
-- **FakeStoreAPI**: API pública para operações de CRUD.
-- **Firebase**: Hospedagem e deploy do PWA.
+- **Ionic**
+- **Angular**
+- **Capacitor**
+- **FakeStoreAPI**
+- **Firebase**
 
 ## Pré-requisitos
 
